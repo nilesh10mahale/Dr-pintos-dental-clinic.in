@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: dr-pintos-dental-clinic
+    env: node
+    branch: main
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    autoDeploy: true
+    healthCheckPath: "/"
+    envVars:
+      - key: ADMIN_PASSWORD
+        value: "REPLACE_WITH_ADMIN_PASSWORD"
+      - key: SESSION_SECRET
+        value: "REPLACE_WITH_SESSION_SECRET"
+      - key: PORT
+        value: "3000"
